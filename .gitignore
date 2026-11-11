@@ -1,0 +1,10 @@
+node_modules/
+backend/data/
+backend/*.sqlite
+backend/*.sqlite3
+frontend/dist/
+.env
+.env.local
+npm-debug.log*
+.DS_Store
+coverage/
