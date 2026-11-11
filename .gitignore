@@ -2,9 +2,13 @@ node_modules/
 backend/data/
 backend/*.sqlite
 backend/*.sqlite3
+data/
+*.sqlite
+*.sqlite3
 frontend/dist/
 .env
-.env.local
+.env.*
+!.env.example
 npm-debug.log*
 .DS_Store
 coverage/

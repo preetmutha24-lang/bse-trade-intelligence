@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: bse-trade-intelligence-api
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node src/server.js
+    plan: standard
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: FRONTEND_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DB_PATH
+        value: /var/data/bse_trade_intelligence.sqlite
+      - key: PULL_DURATION_MS
+        value: 900000
+      - key: DEMO_PULL_DURATION_MS
+        value: 10000
+      - key: LOG_LEVEL
+        value: info
+    disk:
+      name: sqlite-data
+      mountPath: /var/data
+      sizeGB: 1
